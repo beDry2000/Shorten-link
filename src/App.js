@@ -46,7 +46,7 @@ const App = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-      <h1 style={{color: 'white'}}>The privacy-friendly URL Shortener</h1>
+      <h1 style={{ color: 'white' }}>The privacy-friendly URL Shortener</h1>
       <div className='input-container'>
         <div>
           <label>
@@ -56,7 +56,7 @@ const App = () => {
         </div>
         <div >
           {
-           types.map(({ name }, id) => (
+            types.map(({ name }, id) => (
               <button
                 key={id}
                 onClick={() => handleShowLink(id)}
@@ -67,13 +67,16 @@ const App = () => {
         </div>
       </div>
 
-      <div className="generate">
-        
-            <>
-              <h2>Link generated</h2>
-              <p style={{fontSize: '20px'}}>{showLink}</p>
-            </>
-      </div>
+      {showLink && (
+        <div className="generate">
+
+          <>
+            <h2>Link generated</h2>
+            <p style={{ fontSize: '20px' }}>{showLink}</p>
+          </>
+        </div>
+      )}
+
     </div>
   )
 }
